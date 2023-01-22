@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  color: #1A1A1A;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+
+  background-color: #FFE60A;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
+  
+  margin: 16px;
+}
+
+.wrapper > * {
+  grid-column: 2;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.row {
+  display: contents;
+}
+
+.rssi {
+  grid-column: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rssi svg {
+  width: 5ch;
+}
+
+.ssid {
+  grid-column: 2 / 8;
+
+  display: flex;
+  align-items: center;
+}
+
+.secure {
+  grid-column: 8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secure svg {
+  width: 5ch;
+}
+
+.networks {
+  border: #1A1A1A 3px solid;
+  border-radius: 8px;
+  margin-top: 8px;
+  min-height: 64px;
+}
+
+.network {
+  grid-auto-rows: minmax(64px, auto);
+  column-gap: 8px;
+  row-gap: 8px;
+
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  will-change: transform;
+}
+.network ~ .network {
+  border-top: #1A1A1A 3px solid;
+}
+.network:hover {
+  color: #FFE60A;
+  background-color: #1A1A1A;
+}
+
+.form {
+  margin-top: 32px;
+}
+
+.formEntry {
+  grid-auto-rows: minmax(48px, auto);
+  column-gap: 8px;
+  row-gap: 8px;
+}
+
+.formEntry ~ .formEntry {
+  margin-top: 8px
+}
+
+.label {
+  grid-column: 1 / 3;
+
+  display: flex;
+  align-items: center;
+}
+
+.field {
+  grid-column: 3 / 9;
+  border: #1A1A1A 3px solid;
+  border-radius: 8px;
+  background-color: #fff491;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+}
+
+.submit {
+  margin-top: 32px;
+}
+
+/* https://getcssscan.com/css-buttons-examples button 28 with tweaks */
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid #1A1A1A;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1A1A1A;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 64px;
+  min-width: 0;
+  width: 100%;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+button:hover {
+  color: #FFE60A;
+  background-color: #1A1A1A;
+}
+
+button:active {
+  box-shadow: none;
+}
