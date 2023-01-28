@@ -10,6 +10,7 @@
 #include <Adafruit_GFX.h>
 
 const uint8_t LED_COUNT = 14;
+const neoPixelType TYPE = NEO_RGBW + NEO_KHZ800;
 
 const uint8_t BUTTON_UP = 10;
 const uint8_t BUTTON_LEFT = 9;
@@ -192,14 +193,14 @@ class NeonMatrix : public Adafruit_GFX {
 
   public:
     NeonMatrix() : Adafruit_GFX(8 * 2, 14), _strips{
-      new Adafruit_NeoPixel(LED_COUNT, LED1, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED2, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED3, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED4, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED5, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED6, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED7, NEO_GRB + NEO_KHZ800),
-      new Adafruit_NeoPixel(LED_COUNT, LED8, NEO_GRB + NEO_KHZ800),
+      new Adafruit_NeoPixel(LED_COUNT, LED1, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED2, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED3, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED4, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED5, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED6, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED7, TYPE),
+      new Adafruit_NeoPixel(LED_COUNT, LED8, TYPE),
     } {}
 
     void begin() {
